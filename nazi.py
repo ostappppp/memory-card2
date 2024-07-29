@@ -1,6 +1,11 @@
 from PyQt5.QtWidgets import *
+
 import random
+
 import database
+
+import menu
+
 
 app = QApplication([])
 window = QWidget()
@@ -68,8 +73,20 @@ def ans_func():
     next_quest_btn.show()
     answer_btn.hide()
 
-answer_btn.clicked.connect(ans_func)
+def next_quest_func():
+    answears[0].show()
+    answears[1].show()
+    answears[2].show()
+    answears[3].show()
+    res_lbl.hide()
+    next_quest_btn.hide()
+    answer_btn.show()
+    database.nomer +=1
+    set_quest()
 
+next_quest_btn.clicked.connect(next_quest_func)
+answer_btn.clicked.connect(ans_func)
+menu_btn.clicked.connect(menu.menu)
 window.setLayout(main_line)
 window.show()
 app.exec()

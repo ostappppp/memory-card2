@@ -16,4 +16,4 @@ questions = [
     }
 ]
 
-nomer = 1
+nomer = 0
